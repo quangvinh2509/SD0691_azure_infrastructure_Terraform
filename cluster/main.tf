@@ -18,7 +18,7 @@ module "vnet_with_subnets" {
 # invoking aks module to create aks cluster and node group
 module "aks_with_node_group" {
   # invoke aks module under modules directory
-  source = "../modules/aks"
+  source = "../modules/aks_acr"
 
   cluster_name        = var.cluster_name
   k8s_version         = var.k8s_version

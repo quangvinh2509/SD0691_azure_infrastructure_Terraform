@@ -74,7 +74,7 @@ resource "azurerm_container_registry" "acr" {
   resource_group_name = var.resource_group_name
   sku                 = "Basic"
   }
-  resource "azurerm_role_assignment" "example" {
+  resource "azurerm_role_assignment" "acr_attachedto_aks" {
     principal_id                     = azurerm_kubernetes_cluster.k8s.kubelet_identity[0].object_id
     role_definition_name             = "AcrPull"
     scope                            = azurerm_container_registry.acr.id
